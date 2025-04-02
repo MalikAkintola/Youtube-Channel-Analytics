@@ -196,6 +196,7 @@ This function generates **summary statistics** for the specified channels and st
 
 By combining these elements, the entire system remains automated and ensures that Power BI is always working with the most up-to-date data, providing real-time insights into YouTube channel performance.
 
+For Live dashboard [Click here](https://app.powerbi.com/view?r=eyJrIjoiYWNhMDAwMWItNzBkYy00MWE4LThiMDEtY2FhZTNlYjE1Nzk3IiwidCI6ImRlMTM3ZmFmLTVmMDQtNDI1OC04ZjRmLTdhNDg0NDNiM2JiZCIsImMiOjZ9)
 </details>
 
 
