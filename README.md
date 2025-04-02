@@ -1,8 +1,11 @@
-# YouTube Channel Analytics
-[Project](#project-overview)
+# YouTube Channel Analytics [Project](#project-overview)
 
 This project scrapes YouTube channel data using the YouTube API, inserts it into a MySQL database, and generates summary statistics for multiple channels. The main components of the script include collecting video data (like views, likes, comments, etc.), storing it in a relational database, and generating basic statistics like the number of subscribers for each channel.
 
+<a href="#project-overview" style="display:inline-block; padding:10px 20px; background-color:#4CAF50; color:white; text-align:center; text-decoration:none; border-radius:5px;"><h3>Python Script</h3></a>
+- Power BI [BI](#bi)
+
+## Python Script [Python Script](#script)
 ## Features
 
 - **Scrapes video data** from specified YouTube channels including:
@@ -184,5 +187,5 @@ By combining these elements, the entire system remains automated and ensures tha
   - YouTube channel IDs are specified in the script, which are then used to pull data for specific channels.
   
 </details>
-<a href="#project-overview" style="display:inline-block; padding:10px 20px; background-color:#4CAF50; color:white; text-align:center; text-decoration:none; border-radius:5px;">Go to Project Overview</a>
+
 
