@@ -1,6 +1,10 @@
 # YouTube Channel Analytics
 
-This project scrapes YouTube channel data using the YouTube API, inserts it into a MySQL database, and generates summary statistics for multiple channels. The main components of the script include collecting video data (like views, likes, comments, etc.), storing it in a relational database, and generating basic statistics like the number of subscribers for each channel.
+This project was designed to test and showcase my skills in web scraping, data mining, and reporting. Using the YouTube Data API v3, I scraped data from various YouTube channels and stored the information in a MySQL database. The project involved cleaning and structuring the data, then building a Power BI dashboard to visualize key metrics such as video views, likes, and comments.
+
+The goal was to demonstrate my ability to automate data collection, model the data effectively, and create meaningful reports. The process was automated with Python scripts and scheduled to run at intervals using Windows Task Scheduler and an on-premises data gateway.
+
+The main components of the script include collecting video data (like views, likes, comments, etc.), storing it in a relational database, and generating basic statistics like the number of subscribers for each channel.
 
 <details>
   <summary><h2>Features</h2></summary>
@@ -157,12 +161,14 @@ This function generates **summary statistics** for the specified channels and st
 
 </details>
 
-### Power BI Desktop 
+<details>
+  <summary><h2>Power BI</h2></summary>
+  
 - **Data Model**:
   -  Power BI was connected to the SQL database to extract the data.
   -  The data was modeled using Power BI's data model, which integrates the video data fetched from the YouTube API(in the database), and the csv file of subscribers count and channel details.
   - Key metrics, such as total views, total likes, and total comments, were included in the model to allow for comprehensive reporting.
-  - **DAX Measures**
+- **DAX Measures**
   - A key dax procedure implemented allowed users to easily get a ranking of videos by either total likes, total views or total comments.
 
 ![Data Model Screenshot](files/model.jpg)  <!-- Replace with the correct path -->
@@ -190,6 +196,6 @@ This function generates **summary statistics** for the specified channels and st
 
 By combining these elements, the entire system remains automated and ensures that Power BI is always working with the most up-to-date data, providing real-time insights into YouTube channel performance.
 
-
+</details>
 
 
