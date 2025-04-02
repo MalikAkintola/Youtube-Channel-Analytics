@@ -54,7 +54,7 @@ pip install google-api-python-client pymysql pandas
    
    ```sql
    CREATE DATABASE youtube;
-``
+  
 3. Make sure you have the correct username and password for connecting to MySQL.
 4. Update the connection details in the script accordingly.
 
@@ -64,7 +64,7 @@ pip install google-api-python-client pymysql pandas
 
    ```python
    api_key = 'YOUR_API_KEY'
-``
+   
 2. Add the YouTube channel IDs that you want to track. The script includes sample channels (e.g., mrbeastid, dudeperfectid, etc.).
   - You can add or remove channel IDs as needed.
 
@@ -136,3 +136,58 @@ This function generates **summary statistics** for the specified channels and st
   - The **number of subscribers**.
   - The **channel's image link**.
 
+### ✅ **Expected Output (`videos` table in MySQL)**
+
+| videoid  | publisheddate | title           | categoryId | duration | viewCount | likeCount | commentCount | url                                      | thumbnailUrl                           | channelId                      |
+|----------|--------------|----------------|------------|----------|-----------|-----------|--------------|------------------------------------------|----------------------------------------|--------------------------------|
+| abc123   | 2025-01-01   | Sample Video 1 | 20         | PT15M    | 100000    | 2000      | 100          | [Watch Video](https://youtube.com/watch?v=abc123) | ![Thumbnail](https://youtube.com/thumb.jpg) | UCX6OQ3DkcsbYNE6H8uQQuVA |
+
+
+### Power BI Desktop 
+- **Data Model**:
+  -  Power BI was connected to the SQL database to extract the data.
+  -  The data was modeled using Power BI's data model, which integrates the video data fetched from the YouTube API(in the database), and the csv file of subscribers count and channel details.
+  - Key metrics, such as view count, like count, and comment count, were included in the model to allow for comprehensive reporting.
+  - **DAX Measures**
+  - A key dax procedure implemented allowed users to easily get a ranking of videos by either total like, total views or total comments.
+
+![Data Model Screenshot](path_to_screenshot.jpg)  <!-- Replace with the correct path -->
+
+
+
+- After connecting to the data source and building the data model, the data was cleaned, transformed, and prepared for visualization using Power BI's Power Query Editor.
+- Several report pages were created to visualize video performance, including:
+  - **Total Views** across all videos.
+  - **Engagement Rates** (likes, comments, shares).
+  - **Channel Overview** comparing metrics like subscribers, total views, and average engagement.
+
+## Publishing to Power BI Service
+
+- After finalizing the report in Power BI Desktop, the report was published to the Power BI Service to enable sharing and collaboration.
+- The report was shared with stakeholders for real-time monitoring of YouTube channel performance metrics.
+
+## Setting Up an On-Premises Data Gateway
+
+- To enable automatic refresh of the data in Power BI Service, an On-Premises Data Gateway was set up.
+  - This gateway facilitates the refresh of data from the MySQL database to Power BI.
+  - The gateway ensures the data model stays up-to-date by periodically syncing the data from the local database to the cloud-based Power BI Service.
+
+## Automating the Python Script Execution
+
+- The Python script used to scrape data from the YouTube API is scheduled to run at regular intervals using **Windows Task Scheduler**.
+  - The script fetches fresh data from YouTube, which is then inserted into the MySQL database.
+  - By using Windows Scheduler, the script is automatically executed at predefined intervals without manual intervention, ensuring the data remains current.
+
+- **Steps to Automate the Python Script**:
+  - Set up a task in Windows Task Scheduler to run the script on a schedule (e.g., daily).
+  - Ensure the script is executed with the correct environment and dependencies.
+
+By combining these elements, the entire system remains automated and ensures that Power BI is always working with the most up-to-date data, providing real-time insights into YouTube channel performance.
+
+<details>
+  <summary>Click to expand/collapse: Data Source Connection</summary>
+  
+  - The data is sourced directly from the YouTube API using the `googleapiclient.discovery` package.
+  - YouTube channel IDs are specified in the script, which are then used to pull data for specific channels.
+  
+</details>
