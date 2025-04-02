@@ -1,12 +1,11 @@
-# YouTube Channel Analytics [Project](#project-overview)
+# YouTube Channel Analytics
 
 This project scrapes YouTube channel data using the YouTube API, inserts it into a MySQL database, and generates summary statistics for multiple channels. The main components of the script include collecting video data (like views, likes, comments, etc.), storing it in a relational database, and generating basic statistics like the number of subscribers for each channel.
 
-<a href="#project-overview" style="display:inline-block; padding:10px 20px; background-color:#4CAF50; color:white; text-align:center; text-decoration:none; border-radius:5px;"><h3>Python Script</h3></a>
-- Power BI [BI](#bi)
+<details>
+  <summary><h2>Features</h2></summary>
 
-## Python Script [Python Script](#script)
-## Features
+
 
 - **Scrapes video data** from specified YouTube channels including:
   - Video ID
@@ -25,9 +24,12 @@ This project scrapes YouTube channel data using the YouTube API, inserts it into
   - Subscriber count
   - Channel image link
 - Allows for easy retrieval and storage of data for further analysis.
+</details>
 
-## Requirements
-
+<details>
+  <summary><h2>Requirements and Setup</h2></summary>
+<h3>Requirements</h3>
+  
 - Python 3.x
 - Required Python libraries:
   - `google-api-python-client`: To interact with the YouTube API.
@@ -42,7 +44,8 @@ pip install google-api-python-client pymysql pandas
 - MySQL Database (for storing the scraped data)
   - A local MySQL instance must be set up. Create a database named `youtube` (or any other name of your choice, and modify the connection string in the code accordingly).
 
-### Setup
+
+<h3>Setup</h3>
 
 #### Obtain a YouTube Data API Key:
 
@@ -62,7 +65,10 @@ pip install google-api-python-client pymysql pandas
 3. Make sure you have the correct username and password for connecting to MySQL.
 4. Update the connection details in the script accordingly.
 
-### ▶️ Running the Script:
+</details>
+
+<details>
+  <summary><h2>Running the Script</h2></summary>
 
 1. Replace the `api_key` variable with your actual **YouTube Data API key**:
 
@@ -81,8 +87,11 @@ The script will:
   - Fetch video details for the specified channels.
   - Insert the data into the MySQL database.
   - Generate a CSV file (Channels.csv) with summary statistics for each channel.
+</details>
 
-## 📌 Functions
+<details>
+  <summary><h2>Functions & Output</h2></summary>
+<h3>Functions</h3>
 
 ### 🔹 `get_video_ids(channel_id)`
 This function retrieves the **video IDs** of all videos from a given YouTube channel.
@@ -146,6 +155,7 @@ This function generates **summary statistics** for the specified channels and st
 |----------|--------------|----------------|------------|----------|-----------|-----------|--------------|------------------------------------------|----------------------------------------|--------------------------------|
 | abc123   | 2025-01-01   | Sample Video 1 | 20         | PT15M    | 100000    | 2000      | 100          | [Watch Video](https://youtube.com/watch?v=abc123) | ![Thumbnail](https://youtube.com/thumb.jpg) | UCX6OQ3DkcsbYNE6H8uQQuVA |
 
+</details>
 
 ### Power BI Desktop 
 - **Data Model**:
@@ -180,12 +190,6 @@ This function generates **summary statistics** for the specified channels and st
 
 By combining these elements, the entire system remains automated and ensures that Power BI is always working with the most up-to-date data, providing real-time insights into YouTube channel performance.
 
-<details>
-  <summary><h2><u>Click to expand/collapse: Data Source Connection</u></h2></summary>
-  
-  - The data is sourced directly from the YouTube API using the `googleapiclient.discovery` package.
-  - YouTube channel IDs are specified in the script, which are then used to pull data for specific channels.
-  
-</details>
+
 
 
