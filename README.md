@@ -1,4 +1,5 @@
 # YouTube Channel Analytics
+[Project](#project-overview)
 
 This project scrapes YouTube channel data using the YouTube API, inserts it into a MySQL database, and generates summary statistics for multiple channels. The main components of the script include collecting video data (like views, likes, comments, etc.), storing it in a relational database, and generating basic statistics like the number of subscribers for each channel.
 
@@ -147,24 +148,16 @@ This function generates **summary statistics** for the specified channels and st
 - **Data Model**:
   -  Power BI was connected to the SQL database to extract the data.
   -  The data was modeled using Power BI's data model, which integrates the video data fetched from the YouTube API(in the database), and the csv file of subscribers count and channel details.
-  - Key metrics, such as view count, like count, and comment count, were included in the model to allow for comprehensive reporting.
+  - Key metrics, such as total views, total likes, and total comments, were included in the model to allow for comprehensive reporting.
   - **DAX Measures**
-  - A key dax procedure implemented allowed users to easily get a ranking of videos by either total like, total views or total comments.
+  - A key dax procedure implemented allowed users to easily get a ranking of videos by either total likes, total views or total comments.
 
-![Data Model Screenshot](path_to_screenshot.jpg)  <!-- Replace with the correct path -->
+![Data Model Screenshot](files/model.jpg)  <!-- Replace with the correct path -->
 
-
-
-- After connecting to the data source and building the data model, the data was cleaned, transformed, and prepared for visualization using Power BI's Power Query Editor.
-- Several report pages were created to visualize video performance, including:
-  - **Total Views** across all videos.
-  - **Engagement Rates** (likes, comments, shares).
-  - **Channel Overview** comparing metrics like subscribers, total views, and average engagement.
 
 ## Publishing to Power BI Service
 
 - After finalizing the report in Power BI Desktop, the report was published to the Power BI Service to enable sharing and collaboration.
-- The report was shared with stakeholders for real-time monitoring of YouTube channel performance metrics.
 
 ## Setting Up an On-Premises Data Gateway
 
@@ -185,9 +178,11 @@ This function generates **summary statistics** for the specified channels and st
 By combining these elements, the entire system remains automated and ensures that Power BI is always working with the most up-to-date data, providing real-time insights into YouTube channel performance.
 
 <details>
-  <summary>Click to expand/collapse: Data Source Connection</summary>
+  <summary><h2><u>Click to expand/collapse: Data Source Connection</u></h2></summary>
   
   - The data is sourced directly from the YouTube API using the `googleapiclient.discovery` package.
   - YouTube channel IDs are specified in the script, which are then used to pull data for specific channels.
   
 </details>
+<a href="#project-overview" style="display:inline-block; padding:10px 20px; background-color:#4CAF50; color:white; text-align:center; text-decoration:none; border-radius:5px;">Go to Project Overview</a>
+
